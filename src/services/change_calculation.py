@@ -1,9 +1,10 @@
 from typing import List
 from itertools import product
+
 TICKET_COST =  25
 POSITIVE_RESPONSE = "SI"
 NEGATIVE_RESPONSE = "NO"
-VALID_INPUTS = {25: 0, 50: 0, 100: 0}
+INITIAL_NUMBER_OF_BILLS = {25: 0, 50: 0, 100: 0}
 
 def dot_product(vector_a: List[float], vector_b: List[float])->float:
    if len(vector_a) != len(vector_b):
@@ -30,9 +31,9 @@ def process_change(required_value: int, current_cash: dict):
     return None
 
 def has_enough_change(payments_received: List[int]) -> str:
-    current_cash = VALID_INPUTS
+    current_cash = INITIAL_NUMBER_OF_BILLS
     for payment in payments_received:
-        if not payment in VALID_INPUTS.keys():
+        if not payment in INITIAL_NUMBER_OF_BILLS.keys():
             raise Exception("Input is not valid")
         
         change = payment - TICKET_COST
