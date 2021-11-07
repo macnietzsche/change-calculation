@@ -1,4 +1,3 @@
-from functools import reduce
 from typing import List
 from itertools import product
 TICKET_COST =  25
@@ -12,6 +11,22 @@ def dot_product(vector_a: List[float], vector_b: List[float])->float:
    return sum(i[0] * i[1] for i in zip(vector_a, vector_b))
 
 def process_change(required_value: int, current_cash: dict):
+    numbers_of_bills = list(current_cash.values())
+    bill_denominations = list(current_cash.keys())
+    iterated_numbers_of_bills = list(map(lambda x: list(range(x + 1)), numbers_of_bills))
+
+    posibilities = product(*iterated_numbers_of_bills)
+    posibilities_as_dict = list(map(lambda item: dict(zip(bill_denominations, item)),posibilities))
+    for posibility in posibilities_as_dict:
+        values = list(posibility.values())
+        keys = list(posibility.keys())
+
+        amount = dot_product(values,keys)
+        if amount == required_value:
+            response = current_cash.copy()
+            for key in keys:
+                response[key] -= posibility[key]
+            return response
     return None
 
 def has_enough_change(payments_received: List[int]) -> str:
