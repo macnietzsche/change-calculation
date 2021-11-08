@@ -13,7 +13,7 @@ The cashier is able to give back change if his cash register:
 | [25, 100]                   | NO          |
 | [25, 25, 50, 50, 100]       | NO          |
 
-**Notice:** As for today, it is assumed that cashier's initial amount of money in register is 0, and customers pay only with 25, 20 or 100 currency denominations.
+**Notice:** As for today, it is assumed that cashiers' initial amount of money in register is 0, and customers pay only with 25, 50 or 100 currency denominations.
 
 ## Requirements
 In order to run this application ```Python 3.7``` is required. No third-party libraries are needed. 
