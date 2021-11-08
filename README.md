@@ -7,7 +7,7 @@ The cashier is able to give back change if his cash register:
 - Has currency denominations to make the exact amount of change
 
 ## Sample cases
-| Input (queue of cusotmens)  | Output      |
+| Input (queue of customers)  | Output      |
 | :-------------------------- | -----------:|
 | [25, 25, 50]                | SI          |
 | [25, 100]                   | NO          |
